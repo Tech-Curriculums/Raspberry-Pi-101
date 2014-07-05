@@ -1,4 +1,8 @@
-Sometimes we want to do things on a network we aren't physically at. :troll:
+Reverse Shell
+=============
+
+
+Sometimes we want to do things on a network we aren't physically at. :trollface:
 
 Here we will look at how to plant a remote access brick in any location using the raspberry pi.
 
