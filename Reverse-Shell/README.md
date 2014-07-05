@@ -41,7 +41,11 @@ Below is how I would go about it (I have a habit of checking what's there with `
 ```sh
 cd ~/.ssh
 ls
-cp id_rsa.pub yourusername@youripaddress:~/.ssh/authorized_keys
+scp id_rsa.pub yourusername@youripaddress:~/.ssh/pipub.pub
+ssh yourusername@youripaddress <<'ENDSSH'
+cat ~/.ssh/pipub.pub >> ~/.ssh/authorized_keys
+rm ~/.ssh/pipub.pub
+ENDSSH
 ```
 
 **Replace `yourusername` with your laptop's username and `youripaddress` with your ip address found by typing `ifconfig`**
