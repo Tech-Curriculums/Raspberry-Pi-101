@@ -21,8 +21,9 @@ Here we will look at how to plant a remote access brick in any location using th
 * say something to the people who are home (espeak)
 * ssh into other local computers and play pranks
 
+---
 
-### Setting Up SSH
+## Setting Up SSH
 
 (3 steps, 2 minutes)
 
@@ -45,7 +46,7 @@ cp id_rsa.pub yourusername@youripaddress:~/.ssh/authorized_keys
 
 **Replace `yourusername` with your laptop's username and `youripaddress` with your ip address found by typing `ifconfig`**
 
-### Reverse the Shell
+## Reverse the Shell
 
 Now that your raspberry pi and your computer are sharing the keys, simply have the pi bring it's tunnel to your lappy:
 
