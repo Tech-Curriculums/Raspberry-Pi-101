@@ -48,6 +48,8 @@ cp id_rsa.pub yourusername@youripaddress:~/.ssh/authorized_keys
 
 ## Reverse the Shell
 
+(2 steps, 3 minutes)
+
 Now that your raspberry pi and your computer are sharing the keys, simply have the pi bring it's tunnel to your lappy:
 
 ```sh
@@ -55,6 +57,10 @@ ssh -N -R 2222:localhost:22 serverusername@serveripaddress
 ```
 
 **Replace `serverusername` with your server's username and `serveripaddress` with the ip address of server**
+
+===
+
+Next we'll make a script to automate this:
 
 ```
 #!/bin/bash
@@ -69,6 +75,21 @@ if [[ $? -ne 0 ]]; then
 fi
 ```
 **Remember to replace `serverusername` and `serveripaddress` as reviewed before**
+
+===
+
+finally we'll set it up to check (fixing if necessary) every 1 minute:
+
+```sh
+chmod 700 create_the_tunnel.sh
+crontab -e
+```
+inside crontab do the following:
+
+```sh
+* * * * * ~/create_the_tunnel.sh
+```
+
 
 ## References
 
