@@ -96,6 +96,11 @@ inside crontab do the following:
 * * * * * ~/create_the_tunnel.sh
 ```
 
+## Try it out
+
+`ssh -l pi -p 2222 localhost`
+
+if your username on your raspberry is not `pi` then adjust it to `piuser` or `batman` etc.
 
 ## References
 
