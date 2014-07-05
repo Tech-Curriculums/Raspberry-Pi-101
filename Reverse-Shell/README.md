@@ -50,7 +50,7 @@ cp id_rsa.pub yourusername@youripaddress:~/.ssh/authorized_keys
 
 (2 steps, 3 minutes)
 
-Now that your raspberry pi and your computer are sharing the keys, simply have the pi bring it's tunnel to your lappy:
+### Now that your raspberry pi and your computer are sharing the keys, simply have the pi bring it's tunnel to your lappy:
 
 ```sh
 ssh -N -R 2222:localhost:22 serverusername@serveripaddress
@@ -60,7 +60,7 @@ ssh -N -R 2222:localhost:22 serverusername@serveripaddress
 
 ===
 
-Next we'll make a script to automate this:
+### Next we'll make a script to automate this:
 
 ```
 #!/bin/bash
@@ -78,7 +78,7 @@ fi
 
 ===
 
-finally we'll set it up to check (fixing if necessary) every 1 minute:
+### finally we'll set it up to check (fixing if necessary) every 1 minute:
 
 ```sh
 chmod 700 create_the_tunnel.sh
