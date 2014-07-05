@@ -54,8 +54,21 @@ Now that your raspberry pi and your computer are sharing the keys, simply have t
 ssh -N -R 2222:localhost:22 serverusername@serveripaddress
 ```
 
-** Replace `serverusername` with your server's username and `serveripaddress` with the ip address of server**
+**Replace `serverusername` with your server's username and `serveripaddress` with the ip address of server**
 
+```
+#!/bin/bash
+
+# see if there's a process called ssh running
+/bin/pidof ssh
+
+# the special symbol $? gives success of last command (in this case pidof ssh):
+#    you should in general expect $? to return `0` for a success and `1` for an ERROR 
+if [[ $? -ne 0 ]]; then
+  /usr/bin/ssh -N -R 2222:localhost:22 serverusername@serveripaddress
+fi
+```
+**Remember to replace `serverusername` and `serveripaddress` as reviewed before**
 
 ## References
 
