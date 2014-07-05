@@ -80,8 +80,10 @@ fi
 
 #### finally we'll set it up to check (fixing if necessary) every 1 minute:
 
+(we're assuming you saved the script as `create_the_tunnel.sh` in your home directory)
+
 ```sh
-chmod 700 create_the_tunnel.sh
+chmod 700 ~/create_the_tunnel.sh
 crontab -e
 ```
 inside crontab do the following:
