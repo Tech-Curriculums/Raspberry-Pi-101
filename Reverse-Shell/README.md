@@ -66,7 +66,7 @@ ssh -N -R 2222:localhost:22 serverusername@serveripaddress
 
 #### Next we'll make a script to automate this:
 
-```
+```bash
 #!/bin/bash
 
 # see if there's a process called ssh running
